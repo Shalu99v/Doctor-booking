@@ -26,6 +26,8 @@ const DocLogin = () => {
       const response = await axios.post('/doctor/login', login);
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('ID', response.data.id);
+      localStorage.setItem('role', response.data.role);
+
 
       notification.success({
         message: 'Success',

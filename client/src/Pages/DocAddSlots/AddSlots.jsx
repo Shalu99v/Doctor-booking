@@ -3,7 +3,7 @@ import {
   DatePicker,
   TimePicker,
   InputNumber,
-  Button,
+  Button,  
   Form,
   notification,
 } from 'antd';
@@ -57,7 +57,15 @@ const BookingForm = () => {
     console.log(data, 'data');
 
     try {
-      const response = await axios.post('/slots', data);
+      const token = localStorage.getItem('token');
+      console.log(token,"tokens")
+      const response = await axios.post('/slots', data,
+      //    {
+      //   headers: {
+      //     Authorization: `Bearer ${token}` 
+      //   }
+      // }
+    );
       console.log(response.data, 'slotsData');
       notification.success({
         message: 'Success',

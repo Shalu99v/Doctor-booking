@@ -11,7 +11,6 @@ const userSchema = mongoose.Schema(
       type: String,
       trim: true,
     },
-
     email: {
       type: String,
       required: true,
@@ -22,9 +21,23 @@ const userSchema = mongoose.Schema(
       required: true,
       trim: true,
     },
+    phno: {
+      type: String,
+      trim: true,
+      required: true,
+    },
+    age: {
+      type: Number,
+      min: 0, // Optional: You can specify a minimum age
+    },
+    gender: {
+      type: String,
+      enum: ['male', 'female', 'other'], // Optional: Define acceptable values
+      trim: true,
+    },
   },
   {
-    timestamps: true,
+    timestamps: true, // Automatically adds `createdAt` and `updatedAt` timestamps
   }
 );
 

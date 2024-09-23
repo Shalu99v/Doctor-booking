@@ -22,8 +22,11 @@ const UserLogin = () => {
   const onUserLogin = async () => {
     try {
       const response = await axios.post('/user/login', userLogin);
+      console.log(response,"response")
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('ID', response.data.id);
+      localStorage.setItem('role', response.data.token);
+
 
       notification.success({
         message: 'Success',

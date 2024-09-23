@@ -26,11 +26,9 @@ const App = () => {
         <Route path="/doctor/bookings" element={<DocBookings />} />
         <Route path="/doctor/:id" element={<DocBookings />} />
         <Route path="/doctor/profile" element={<DocProfile />} />
-
       </Route>
       <Route element={<PrivateRoute role="USER" />}>
         <Route path="/user/home" element={<UserHome />} />
-        
       </Route>
     </Routes>
   );

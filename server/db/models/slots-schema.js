@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const timeSchema = mongoose.Schema({
+  _id: {
+    type: mongoose.Schema.Types.ObjectId,
+    auto: true
+  },
   timeFrom: {
     type: String,
     trim: true,
@@ -15,6 +19,7 @@ const timeSchema = mongoose.Schema({
     trim: true,
   },
 });
+
 
 const slotSchema = mongoose.Schema(
   {
