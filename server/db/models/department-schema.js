@@ -11,6 +11,8 @@ image:{
     required:true,
     trim:true
 },
+doctors: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Doctor' }],
+hospitals: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Hospital' }]
 },
 {
     timestamps:true

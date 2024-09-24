@@ -14,7 +14,7 @@ const Sidebar = () => {
     qualification: '',
     image: '',
   });
-
+console.log(doctor,"doctor")
   const onLogOut = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('ID');
@@ -28,6 +28,7 @@ const Sidebar = () => {
   const getDocHome = async () => {
     const doctorID = localStorage.getItem('ID');
     const response = await axios.get(`/doctor/${doctorID}`);
+    console.log(response,"doctorrespo")
     setDoctor(response.data);
   };
 
@@ -67,7 +68,7 @@ const Sidebar = () => {
           <p>Add slots</p>
         </NavLink>
 
-        <p onClick={onLogOut}>Logout</p>
+        <p  className="logoutP" onClick={onLogOut}>Logout</p>
       </div>
       <ToastContainer />
     </div>

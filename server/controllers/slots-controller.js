@@ -29,7 +29,7 @@ module.exports.getSlots = async (req, res) => {
       return res.status(400).json({ message: 'Doctor ID is required' });
     }
 
-    const slots = await Slots.find({ doctor: doctor }).populate('doctor'); 
+    const slots = await Slots.find({ doctor: doctor }).populate('doctor');
 
     if (!slots.length) {
       return res
@@ -39,14 +39,13 @@ module.exports.getSlots = async (req, res) => {
 
     res.status(200).json({ message: 'Success', data: slots });
   } catch (error) {
-    
     res.status(500).json({ message: 'Failed to fetch slots', error });
   }
 };
 module.exports.getSlotsById = async (req, res) => {
   try {
     const doctorId = req.params.id;
-    console.log(doctorId)
+    console.log(doctorId);
     const slots = await Slots.find({ doctor: doctorId });
 
     if (!slots.length) {
@@ -61,7 +60,6 @@ module.exports.getSlotsById = async (req, res) => {
     res.status(500).json({ message: 'Failed to fetch slots', error });
   }
 };
-
 
 module.exports.updateSlots = async (req, res) => {
   try {
@@ -94,20 +92,21 @@ module.exports.updateSlots = async (req, res) => {
   }
 };
 
-
 module.exports.deleteSlots = async (req, res) => {
   try {
     const { date, timeFrom, doctor } = req.body;
 
     if (!doctor || !date || !timeFrom) {
-      return res.status(400).json({ message: 'Doctor ID, date, and timeFrom are required' });
+      return res
+        .status(400)
+        .json({ message: 'Doctor ID, date, and timeFrom are required' });
     }
 
     // Find the slot by date, doctor, and timeFrom and remove it
     const updatedSlots = await Slots.findOneAndUpdate(
       { date: new Date(date), doctor: doctor },
       {
-        $pull: { slots: { timeFrom: timeFrom } } // Pull out the slot with the specified timeFrom
+        $pull: { slots: { timeFrom: timeFrom } }, // Pull out the slot with the specified timeFrom
       },
       { new: true }
     );
@@ -116,9 +115,10 @@ module.exports.deleteSlots = async (req, res) => {
       return res.status(404).json({ message: 'Slot not found' });
     }
 
-    res.status(200).json({ message: 'Slot deleted successfully', data: updatedSlots });
+    res
+      .status(200)
+      .json({ message: 'Slot deleted successfully', data: updatedSlots });
   } catch (error) {
     res.status(500).json({ message: 'Failed to delete slot', error });
   }
 };
-

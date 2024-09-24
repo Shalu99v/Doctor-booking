@@ -1,0 +1,67 @@
+.home {
+    display: flex;
+  }
+.home .home-container
+
+{
+    height: 100vh;
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+h2 {
+    text-align: start;
+    /* margin-bottom: 20px; */
+    /* color: white; */
+}
+h1 {
+    text-align: start;
+    margin-bottom: 20px;
+  }
+
+  /* MainPage.css */
+
+.main-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    background: linear-gradient(to right, #3B2C67, #067928);
+}
+  
+  .main-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .main-page p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .login-buttons {
+    display: flex;
+    gap: 20px; /* Space between buttons */
+  }
+  
+  .login-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #007bff; /* Bootstrap primary color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .login-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  .homeBtn
+{
+  margin: 10px;
+  background: linear-gradient(to right, #3B2C67, #067928);
+  color: white;
+}

@@ -62,3 +62,4 @@ module.exports.getDoctorbyId = async (req, res) => {
   }
 
 };
+

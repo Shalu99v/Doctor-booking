@@ -21,11 +21,11 @@ const userSchema = mongoose.Schema(
       required: true,
       trim: true,
     },
-    phno: {
-      type: String,
-      trim: true,
-      required: true,
-    },
+    // phno: {
+    //   type: String,
+    //   trim: true,
+    //   required: true,
+    // },
     age: {
       type: Number,
       min: 0, // Optional: You can specify a minimum age

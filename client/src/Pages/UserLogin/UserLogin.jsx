@@ -49,6 +49,7 @@ const UserLogin = () => {
   };
   return (
     <div className="userLogin_main">
+      <Button className='homeBtn' onClick={()=>navigate("/")}>Home</Button>
       <div className="user_login_form">
         <h1>User Login</h1>
         <label>Email</label>

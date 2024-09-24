@@ -26,8 +26,6 @@ const DocLogin = () => {
       const response = await axios.post('/doctor/login', login);
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('ID', response.data.id);
-      localStorage.setItem('role', response.data.role);
-
 
       notification.success({
         message: 'Success',
@@ -51,6 +49,7 @@ const DocLogin = () => {
 
   return (
     <div className="loginMain_page">
+      <Button className='homeBtn' onClick={()=>navigate("/")}>Home</Button>
       <div className="doc_login_form">
         <h1>Doctor Login</h1>
         <label>Email</label>

@@ -9,12 +9,14 @@ const checkToken = roleArr => {
       }
 
       const token = bToken.split(' ')[1];
-      console.log(token,"tokensss");
 
       const isValid = jwt.verify(token, process.env.SECRET_KEY);
+      console.log(isValid)
       if (!roleArr.includes(isValid.role)) {
         return res.status(403).json({ message: 'You are not authorized' });
       }
+      req.userId = isValid.userId;
+
       next();
     } catch (e) {
       return res.status(403).json({ message: 'You are not authorized' });
