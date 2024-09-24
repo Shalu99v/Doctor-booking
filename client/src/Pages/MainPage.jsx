@@ -14,7 +14,7 @@ const MainPage = () => {
 
   return (
     <div className="main-page">
-      <h1>Welcome to the Doctor Booking App</h1>
+      <h1 >Welcome to the Doctor Booking App</h1>
       <p>Please choose your login type:</p>
       <div className="login-buttons">
         <button onClick={handleUserLogin} className="login-button" style={{backgroundColor:"#3B2C67"}}>User Login</button>
